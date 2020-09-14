@@ -11,10 +11,9 @@
    <children>
       <Label layoutX="26.0" layoutY="39.0" text="Diretório" />
       <Button layoutX="255.0" layoutY="24.0" mnemonicParsing="false" onAction="#findFolderBtOnClick" prefHeight="48.0" prefWidth="81.0" text="Procurar diretório" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" />
-      <TextField fx:id="folderTF" layoutX="85.0" layoutY="35.0" />
       <TextField fx:id="fileNameTF" layoutX="85.0" layoutY="86.0" />
       <Label layoutX="22.0" layoutY="75.0" prefHeight="48.0" prefWidth="54.0" text="Nome do arquivo" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="237.0" layoutY="235.0" mnemonicParsing="false" onAction="#recordBtOnClick" prefHeight="77.0" prefWidth="147.0" text="Gravar">
+      <Button fx:id="recordBt" layoutX="237.0" layoutY="235.0" mnemonicParsing="false" onMouseClicked="#recordBtOnClick" prefHeight="77.0" prefWidth="147.0" text="Gravar">
          <font>
             <Font size="28.0" />
          </font>
@@ -25,5 +24,6 @@
       <Label layoutX="431.0" layoutY="21.0" text="Taxa de amostragem" />
       <Label layoutX="460.0" layoutY="80.0" text="Resolução" />
       <Label layoutX="468.0" layoutY="137.0" text="Canais" />
+      <Label fx:id="folderLabel" alignment="CENTER" layoutX="86.0" layoutY="24.0" prefHeight="48.0" prefWidth="147.0" textAlignment="CENTER" textOverrun="LEADING_ELLIPSIS" wrapText="true" />
    </children>
 </AnchorPane>

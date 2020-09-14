@@ -1,7 +1,5 @@
 package senai.audio.entities.enums;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public enum Channel {
 
@@ -23,21 +21,13 @@ public enum Channel {
 		return value;
 	}
 	
-	public Channel getByName(String name) {
+	public static Channel getEnumByName(String name) {
 		for (Channel ch : Channel.values()) {
-			if(name.contains(ch.name())) {
+			if(name.contains(ch.getValue().toString())) {
 				return ch;
 			}
 		}
 		return null;
-	}
-	
-	public List<String> getList() {
-		List<String> list = new ArrayList<>();
-		for (Channel x : Channel.values()) {
-			list.add(x.name + "(" + x.value.toString() + ")");
-		}
-		return list;
 	}
 }
 

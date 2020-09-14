@@ -70,6 +70,7 @@ public class Record {
 		 
          if (!AudioSystem.isLineSupported(info)) {
              System.out.println("Line not supported");
+             System.out.println(info.toString());
              System.exit(0);
          } else {
         		try {

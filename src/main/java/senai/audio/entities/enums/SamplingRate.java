@@ -1,8 +1,5 @@
 package senai.audio.entities.enums;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public enum SamplingRate {
 	
 	STANDARD("Padrão", 44100);
@@ -22,7 +19,7 @@ public enum SamplingRate {
 		return value;
 	}
 	
-	public SamplingRate getEnumByname(String name) {
+	public static SamplingRate getEnumByname(String name) {
 		for (SamplingRate sR : SamplingRate.values()) {
 			if(name.contains(sR.getName())) {
 				return sR;
