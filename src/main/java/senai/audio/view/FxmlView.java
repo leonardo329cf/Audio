@@ -13,6 +13,17 @@ public enum FxmlView {
 		String getFxmlFile() {
 			return "/fxml/Main.fxml";
 		}
+	},
+	RECORD { 
+		@Override
+		String getTitle() {
+			return "Record";
+		}
+		
+		@Override
+		String getFxmlFile() {
+			return "/fxml/Record.fxml";
+		}
 	};
 	
     abstract String getTitle();

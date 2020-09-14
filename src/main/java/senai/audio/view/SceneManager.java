@@ -3,7 +3,6 @@ package senai.audio.view;
 import java.io.IOException;
 
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.TitledPane;
 import javafx.scene.layout.AnchorPane;
 import senai.audio.spring.config.SpringFXMLLoader;
 
@@ -19,8 +18,9 @@ public class SceneManager {
 	
 	public Object switchScene(FxmlView view, AnchorPane sceneAnchor) throws IOException {
 		 FXMLLoader innerLoader = loader.getLoader(view.getFxmlFile());
-		 TitledPane tPanel = innerLoader.load();
-		sceneAnchor.getChildren().setAll(tPanel);
+		 System.out.println(innerLoader);
+		 AnchorPane anchor = innerLoader.load();
+		sceneAnchor.getChildren().setAll(anchor);
 		return innerLoader.getController();
 	}
 	
