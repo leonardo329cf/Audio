@@ -6,13 +6,13 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="senai.audio.controllers.MainController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="senai.audio.controllers.MainController">
    <children>
-      <TabPane prefHeight="407.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane prefHeight="500.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab fx:id="recordTab" text="Gravar">
                <content>
-                  <HBox fx:id="recordHBox" alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                  <HBox fx:id="recordHBox" alignment="CENTER" prefHeight="428.0" prefWidth="600.0">
                      <children>
                         <AnchorPane fx:id="recordAnchorP" prefHeight="200.0" prefWidth="200.0" />
                      </children></HBox>
@@ -20,7 +20,10 @@
           </Tab>
           <Tab fx:id="filesTab" text="Arquivos">
                <content>
-                  <HBox fx:id="filesHBox" prefHeight="100.0" prefWidth="200.0" />
+                  <HBox fx:id="filesHBox" alignment="CENTER" prefHeight="400.0" prefWidth="600.0">
+                     <children>
+                        <AnchorPane fx:id="filesAnchorP" prefHeight="200.0" prefWidth="200.0" />
+                     </children></HBox>
                </content>
           </Tab>
         </tabs>
