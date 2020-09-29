@@ -58,6 +58,13 @@ public class FilesController implements FxmlSecondaryController {
 	public void refreshOnClick(MouseEvent event) {
 		refreshList();
 	}
+	@FXML
+	public void playOnClick(MouseEvent event) {
+		if(!fileTV.getSelectionModel().isEmpty()) {
+			mainController.loadPlay(fileTV.getSelectionModel().getSelectedItem());
+		}
+	}
+	
 	public MainController getMainController() {
 		return mainController;
 	}

@@ -11,11 +11,12 @@
       <Label layoutX="117.0" layoutY="39.0" text="Pasta:" />
       <Label fx:id="folderPathLabel" layoutX="158.0" layoutY="38.0" prefHeight="16.0" prefWidth="285.0" />
       <Button layoutX="452.0" layoutY="24.0" mnemonicParsing="false" onMouseClicked="#pickFolderOnClick" prefHeight="45.0" prefWidth="82.0" text="Escolher Pasta" textAlignment="CENTER" wrapText="true" />
-      <Button layoutX="262.0" layoutY="334.0" mnemonicParsing="false" onMouseClicked="#refreshOnClick" prefHeight="45.0" prefWidth="76.0" text="Atualizar" />
+      <Button layoutX="187.0" layoutY="333.0" mnemonicParsing="false" onMouseClicked="#refreshOnClick" prefHeight="45.0" prefWidth="76.0" text="Atualizar" />
       <TableView fx:id="fileTV" layoutX="167.0" layoutY="85.0" prefHeight="231.0" prefWidth="267.0">
         <columns>
           <TableColumn fx:id="nameTC" prefWidth="266.0" text="nome" />
         </columns>
       </TableView>
+      <Button layoutX="338.0" layoutY="333.0" mnemonicParsing="false" onMouseClicked="#playOnClick" prefHeight="45.0" prefWidth="76.0" text="Tocar" />
    </children>
 </AnchorPane>
