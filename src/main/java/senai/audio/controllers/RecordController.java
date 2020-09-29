@@ -26,9 +26,10 @@ import senai.audio.entities.enums.Channel;
 import senai.audio.entities.enums.Resolution;
 import senai.audio.entities.enums.SamplingRate;
 import senai.audio.view.FxmlController;
+import senai.audio.view.FxmlSecondaryController;
 
 @Controller
-public class RecordController implements FxmlController {
+public class RecordController implements FxmlSecondaryController {
 	
 	private MainController mainController;
 	@FXML

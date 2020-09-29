@@ -24,7 +24,30 @@ public enum FxmlView {
 		String getFxmlFile() {
 			return "/fxml/Record.fxml";
 		}
+	},
+	FILES { 
+		@Override
+		String getTitle() {
+			return "Files";
+		}
+		
+		@Override
+		String getFxmlFile() {
+			return "/fxml/Files.fxml";
+		}
+	},
+	PLAY {
+		@Override
+		String getTitle() {
+			return "Play";
+		}
+		
+		@Override
+		String getFxmlFile() {
+			return "/fxml/Play.fxml";
+		}
 	};
+	
 	
     abstract String getTitle();
     abstract String getFxmlFile();

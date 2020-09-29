@@ -1,5 +1,6 @@
 package senai.audio.controllers;
 
+import java.io.File;
 import java.io.IOException;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import senai.audio.view.FxmlController;
+import senai.audio.view.FxmlSecondaryController;
 import senai.audio.view.FxmlView;
 import senai.audio.view.SceneManager;
 import javafx.scene.control.Tab;
@@ -29,26 +31,40 @@ public class MainController implements FxmlController {
 	private Tab filesTab;
 	@FXML
 	private HBox filesHBox;
+	@FXML
+	private AnchorPane filesAnchorP;
+	private FilesController filesController;
 	
 	@Autowired
 	public MainController(SceneManager sceneManager) {
 		this.sceneManager = sceneManager;
 	}
 	
-	private void loadRecordSection() {
+	private void loadSection(FxmlView fxmlView, AnchorPane anchor, FxmlSecondaryController controller) {
 		try {
-			recordController = (RecordController) sceneManager.switchScene(FxmlView.RECORD, recordAnchorP);
-			recordController.setMainController(this);
+			controller = (FxmlSecondaryController) sceneManager.switchScene(fxmlView, anchor);
+			controller.setMainController(this);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 	}
-	
 	@Override
 	public void initialize() {
-		loadRecordSection();		
+		loadSection(FxmlView.RECORD, recordAnchorP, recordController);	
+		loadSection(FxmlView.FILES, filesAnchorP, filesController);
+	}
+	
+	public void loadPlay(File file) {
+		try {
+			PlayController controller;
+			controller = (PlayController) sceneManager.newScene(FxmlView.PLAY);
+			controller.setMainController(this);
+			controller.setPlay(file);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }
