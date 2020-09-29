@@ -1,5 +1,6 @@
 package senai.audio.controllers;
 
+import java.io.File;
 import java.io.IOException;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,6 +53,18 @@ public class MainController implements FxmlController {
 	public void initialize() {
 		loadSection(FxmlView.RECORD, recordAnchorP, recordController);	
 		loadSection(FxmlView.FILES, filesAnchorP, filesController);
+	}
+	
+	public void loadPlay(File file) {
+		try {
+			PlayController controller;
+			controller = (PlayController) sceneManager.newScene(FxmlView.PLAY);
+			controller.setMainController(this);
+			controller.setPlay(file);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }

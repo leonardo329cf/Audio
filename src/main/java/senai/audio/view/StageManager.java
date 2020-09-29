@@ -1,11 +1,13 @@
 package senai.audio.view;
 
 
+import java.io.IOException;
 import java.util.Objects;
 
-
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import senai.audio.spring.config.SpringFXMLLoader;
 
@@ -63,6 +65,4 @@ public class StageManager {
         }
         return rootNode;
     }
-   
-
 }
