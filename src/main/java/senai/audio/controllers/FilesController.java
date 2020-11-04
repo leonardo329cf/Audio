@@ -65,6 +65,13 @@ public class FilesController implements FxmlSecondaryController {
 		}
 	}
 	
+	@FXML
+	public void editOnClick(MouseEvent event) {
+		if(!fileTV.getSelectionModel().isEmpty()) {
+			mainController.loadEdit(fileTV.getSelectionModel().getSelectedItem());
+		}
+	}
+	
 	public MainController getMainController() {
 		return mainController;
 	}
