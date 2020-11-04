@@ -66,5 +66,16 @@ public class MainController implements FxmlController {
 			e.printStackTrace();
 		}
 	}
-
+	
+	public void loadEdit(File file) {
+		try {
+			EditController controller;
+			controller = (EditController) sceneManager.newScene(FxmlView.EDIT);
+			controller.setMainController(this);
+			controller.setEdit(file);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 }
