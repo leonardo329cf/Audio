@@ -2,6 +2,7 @@ package senai.audio.entities;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Date;
 
 import javax.sound.sampled.AudioFileFormat;
 import javax.sound.sampled.AudioFormat;
@@ -142,6 +143,7 @@ public class Edit {
 		    AudioInputStream inputStream = null;
 		    AudioInputStream shortenedStream = null;
 		    try {
+		    	
 		      File file = new File(filePath);
 		      AudioFileFormat fileFormat = AudioSystem.getAudioFileFormat(file);
 		      AudioFormat format = fileFormat.getFormat();
@@ -156,12 +158,20 @@ public class Edit {
 		      long framesOfAudioToCopy = (long) ((endSlider.getValue() - beginSlider.getValue()) * (int)format.getFrameRate());
 		      shortenedStream = new AudioInputStream(inputStream, format, framesOfAudioToCopy);
 		      
-		      System.out.println(filePath.substring(0, filePath.lastIndexOf('/') + 1) + name + "_edited");
-		      File destinationFile = new File(filePath.substring(0, filePath.lastIndexOf('/') + 1) + name + "_edited.wav");
-		      file.delete();
-		      destinationFile.renameTo(new File(filePath.substring(0, filePath.lastIndexOf('/') + 1) + name + ".wav"));
 		      
+		      File destinationFile = new File(filePath.substring(0, filePath.lastIndexOf('/') + 1) + name + String.valueOf(System.currentTimeMillis()) + ".wav");
 		      AudioSystem.write(shortenedStream, fileFormat.getType(), destinationFile);
+		      
+		      File finalFile = new File(filePath.substring(0, filePath.lastIndexOf('/') + 1) + name + ".wav");
+		      
+		      if(finalFile.exists() && !finalFile.isDirectory()) {
+		    	  finalFile.delete();
+		    	  finalFile = new File(filePath.substring(0, filePath.lastIndexOf('/') + 1) + name + ".wav");
+		      }
+		      
+		      destinationFile.renameTo(finalFile);
+		      
+		      
 		      System.out.println("fim");
 
 		    } catch (Exception e) {
