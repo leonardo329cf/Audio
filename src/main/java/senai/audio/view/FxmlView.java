@@ -46,6 +46,17 @@ public enum FxmlView {
 		String getFxmlFile() {
 			return "/fxml/Play.fxml";
 		}
+	},
+	EDIT {
+		@Override
+		String getTitle() {
+			return "Edit";
+		}
+		
+		@Override
+		String getFxmlFile() {
+			return "/fxml/Edit.fxml";
+		}
 	};
 	
 	
